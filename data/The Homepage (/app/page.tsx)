@@ -1,0 +1,31 @@
+import Link from 'next/link';
+
+export default function Home() {
+  return (
+    <main className="min-h-screen bg-slate-50 flex flex-col items-center justify-center p-6">
+      <section className="text-center max-w-3xl">
+        <h1 className="text-5xl font-extrabold text-blue-900 mb-6">
+          Master the JEE with <span className="text-blue-600">Precision.</span>
+        </h1>
+        <p className="text-xl text-slate-600 mb-10 leading-relaxed">
+          Access high-quality mock questions designed by experts. 
+          Practice Physics, Chemistry, and Mathematics in a real exam environment.
+        </p>
+        <Link 
+          href="/dashboard"
+          className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all shadow-lg hover:shadow-xl"
+        >
+          Start Practice Now →
+        </Link>
+      </section>
+      
+      <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        {['Real-time Feedback', 'JEE Syllabus', 'Detailed Solutions'].map((feat) => (
+          <div key={feat} className="p-4 bg-white rounded-xl border border-slate-200 shadow-sm">
+            <p className="font-semibold text-slate-800">{feat}</p>
+          </div>
+        ))}
+      </div>
+    </main>
+  );
+}
